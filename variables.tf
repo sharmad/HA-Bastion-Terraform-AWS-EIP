@@ -36,9 +36,18 @@ variable "desired_capacity" {
     default     = "1"
 }
 
-variable "ssh_key_name" {
+variable "health_check_grace_period" {
     type = "string"
-    description = "SSH key pair to use to log into bastion"
+    description = "Time (seconds) to wait after instance launches before health-checking"
+}
+
+variable "cooldown_period" {
+    type = "string"
+    description = "Time (seconds) to wait before another scaling activity can start."
+}
+
+variable "public_ssh_key" {
+    type = "string"
 }
 
 variable "security_group_ids" {
@@ -50,10 +59,22 @@ variable "subnet_ids" {
     type = "list"
 }
 
-variable "bastion_volume_type" {
+variable "volume_type" {
   description = "Root volume type"
 }
 
-variable "bastion_volume_size" {
+variable "volume_size" {
   description = "Root volume size (GB)"
+}
+
+variable "dns_zone_id" {
+  description = "DNS hosted zone"
+}
+
+variable "domain" {
+  description = "DNS domain name"
+}
+
+variable "ttl" {
+  description = "time to live (seconds)"
 }
