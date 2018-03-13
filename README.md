@@ -4,11 +4,6 @@ A module to create a HA Bastion Host on AWS which runs in an Autoscaling Group (
 
 ![alt text](https://docs.aws.amazon.com/quickstart/latest/linux-bastion/images/linux-bastion-hosts-on-aws-architecture.png)
 
-Make sure that the subnets in your custom VPC are in separate AZs.  
-Remember: One subnet = one AZ. But one AZ is not one subnet, if that makes sense.  
-So for US-East-1 region, make sure at a minimum 2 subnets are spread across 2 different AZs (US-East-1a, US-East-1b).  
-If one availability zone goes down, the autoscaling group will ensure that the Bastion host gets launched in the other AZ.
-
 
 # INPUT
 ```
